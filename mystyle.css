@@ -1,0 +1,315 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8; /*  */
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+/* New style for card container */
+.card-container {
+    display: flex;
+    justify-content: space-around; /* Evenly distribute the cards */
+    flex-wrap: wrap; /* Allow wrapping to the next line if there's not enough space */
+    gap: 20px; /* Add space between cards */
+    margin-top: 20px;
+}
+
+/* Existing styles */
+.card {
+    width: 300px;  /* Adjust as needed */
+    margin: 0 5px;  /* Reducing horizontal margin */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-image-wrapper {
+    position: relative;
+}
+
+.card-image {
+    width: 100%;
+    height: 150px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    object-fit:cover;
+}
+
+.card-content {
+    padding: 10px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card-description {
+    color: #666;
+}
+
+/* New styles for the overlay */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly transparent black */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 10px; /* Match the card's border radius */
+}
+
+.card:hover .card-overlay {
+    opacity: 1; /* Show overlay when hovering */
+}
+
+.card-overlay p {
+    font-size: 16px;
+    text-align: center;
+    padding: 0 10px;
+}
+
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8); /* Slightly darker background */
+    z-index: 1000; /* Ensure it appears above other content */
+    visibility: hidden; /* Initially hidden */
+    opacity: 0; /* Initially transparent */
+    transition: visibility 0s, opacity 0.5s linear; /* Smooth transition */
+}
+
+.modal.visible {
+    visibility: visible; /* Make it visible */
+    opacity: 1; /* Fade in */
+}
+
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    max-width: 600px; /* Set a max width for the modal */
+    width: 90%; /* Allow it to be responsive */
+    max-height: 80%; /* Set a max height for the modal */
+    overflow-y: auto; /* Enable scrolling if content exceeds max height */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-images img {
+    width: 100%; /* Set images to be responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 300px; /* Set a max width for the images */
+    margin: 5px;
+    border-radius: 8px; /* Optional: Add some rounding to the images */
+}
+
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* Title styling */
+.kitten-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Kitten section margin for spacing */
+.kitten-section {
+    margin-top: 30px;
+}
+
+.video-player-section {
+    text-align: center; /* Centers the title */
+    position: relative; /* Allows for absolute positioning inside */
+}
+
+.video-title {
+    text-align: center; /* Centers the title */
+    margin-bottom: 20px;
+}
+
+.video-player {
+    display: block; /* Makes the iframe block level */
+    margin: 0; /* Removes margin */
+    position: absolute; /* Allows positioning */
+    left: 0; /* Positions the player to the left */
+}
+
+/* Optional: Adjust height of video player */
+#video-player-container {
+    width: 100%; /* Full width for container */
+    position: relative; /* Container must be relative to position child elements */
+    padding-left: 10px; /* Adds space from the left */
+}
+
+.video-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Space between buttons */
+}
+
+.video-controls button {
+    background-color: #6a5acd; /* Purple color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Semi-rounded edges */
+    padding: 10px 20px; /* Padding for button */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.video-controls button:hover {
+    background-color: #5b4bcd; /* Darker purple on hover */
+}
+
+.google-form-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6a5acd; /* Purple color */
+    color: white;
+    border-radius: 8px; /* Semi-rounded edges */
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.google-form-link:hover {
+    background-color: #5a4db4; /* Darker purple on hover */
+}
+
+.animated-title {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    animation: textAnimation 3s ease-in-out infinite;
+  }
+  
+  @keyframes textAnimation {
+    0% {
+      transform: scale(1);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    }
+    50% {
+      transform: scale(1.2);
+      text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
+    }
+    100% {
+      transform: scale(1);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    }
+  }
+  
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 400px; /* Ensures card does not exceed screen width */
+        margin: 10px 0;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .card-container {
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    
+    .card {
+        width: 45%; /* Allows two cards per row on tablets */
+        margin: 10px;
+    }
+}
+
+.adoption-rules {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fef8e5;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.adoption-rules h2 {
+    color: #730bc8;
+    font-family: 'Baloo 2', sans-serif;
+}
+
+.rules-list {
+    color: #444;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    list-style: none;
+    padding-left: 0;
+    font-family: 'Baloo 2', sans-serif;
+}
+
+.rules-list li {
+    position: relative;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    opacity: 1; /* Set opacity to 1 to ensure visibility */
+    transform: translateY(0); /* Remove translateY for initial visibility */
+    transition: color 0.3s ease;
+}
+
+.rules-list li:hover {
+    color: #d17d00;
+    font-weight: bold;
+}
+
+.rules-list li .rule-icon {
+    font-size: 1.5rem;
+    color: #7413d6;
+    margin-right: 10px;
+}
+
